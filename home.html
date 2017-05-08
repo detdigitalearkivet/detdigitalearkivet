@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="no" ng-app="app">
+
+<head>
+
+    <title>Det Digitale Arkivet</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/myCSS.css">
+    <link rel="stylesheet" href="css/customNavbar.css">
+
+<!--For å skifte font,
+    1.lim inn font link her, på hver side!!:
+    2- lim in font-family i filen myCSS.css
+
+  -->
+<link href="https://fonts.googleapis.com/css?family=PT+Sans|Poppins" rel="stylesheet">
+
+
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+
+</head>
+
+
+<body>
+
+<div id="section1-container">
+
+  <div id="custom-bootstrap-menu" class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+          <div class="navbar-header"><a class="navbar-brand"><h2>Det «digitale arkivet»</h2></a>
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+              </button>
+          </div>
+          <div class="collapse navbar-collapse navbar-menubuilder">
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="home.html"><h2>Kart</h2></a>
+                  </li>
+                  <li><a href="hensikt.html"><h2>Hensikt</h2></a>
+                  </li>
+                  <li><a href="essay.html"><h2>Essay</h2></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+
+  <div id="map">
+  </div>
+
+
+    <style>
+        .mapboxgl-popup {
+            max-width: 400px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+
+
+
+
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoiamh1c2VieSIsImEiOiJjaXhmd2J2Z2cwMDA4Mm9vMnhmdmZhMDllIn0.icbwYzlWdL9opgCKX8LB3w';
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/jhuseby/cixfxxn4g00m02pnwhrz7khtk',
+        center: [5.752072,58.971251], // starting position
+        zoom: 15 // starting zoom
+    });
+
+    map.on('load', function() {
+
+
+        // Add a layer showing the places.
+        map.addLayer({
+            "id": "places",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"stoperigata6.html\">Støperigata 6</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.75204,58.97132]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                        "description": "<strong><a href=\"dokkgata4.html\">Dokkgata 4</a></strong>",
+                        "icon": "marker"
+                        },
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates": [5.750949,58.971535]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                        "description": "<strong><a href=\"pedersgata110.html\">Pedersgata 110</a></strong>",
+                        "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.750500,58.970837]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                        "description": "<strong><a href=\"haraldharfagresgate4.html\">Harald Hårfagres gate 4</a></strong>",
+                        "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.750307,58.971110]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                        "description": "<strong><a href=\"pedersgata115.html\">Pedersgata 115</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.751305,58.970729]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"pedersgata116.html\">Pedersgata 116</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.751027,58.970965]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                          "description": "<strong><a href=\"stoperigata26-28.html\">Støperigata 26-28</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.754099,58.969615]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"stoperigata34.html\">Støperigata 34</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.754788,58.969673]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"stoperigata34tilbygg.html\">Støperigata 34 - tilbygg</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.755043,58.969760]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"stoperigata38.html\">Støperigata 38</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.755209,58.969311]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"stoperigata38tilbygg.html\">Støperigata 38 - tilbygg</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.754678,58.969424]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"lervigsveien14a.html\">Lervigsveien 14A</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.755700,58.969948]
+                          }
+                      }, {
+                          "type": "Feature",
+                          "properties": {
+                              "description": "<strong><a href=\"dokkgata7.html\">Dokkgata 7</a></strong>",
+                              "icon": "marker"
+                          },
+                          "geometry": {
+                              "type": "Point",
+                              "coordinates": [5.75131,58.97129]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"dokkgata3.html\">Dokkgata 3</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.750831, 58.971216]
+                        }
+                    }, {
+                        "type": "Feature",
+                        "properties": {
+                            "description": "<strong><a href=\"banevigsgata5.html\">Banevigsgata 5</a></strong>",
+                            "icon": "marker"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.749264, 58.971378]
+                        }
+                    },
+                  ]
+                }
+            },
+            "layout": {
+                "icon-image": "{icon}-15",
+                "icon-allow-overlap": true,
+                "icon-size":1.5
+            }
+        });
+    });
+
+    // Create a popup, but don't add it to the map yet.
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+
+    map.on('mousemove', function(e) {
+        var features = map.queryRenderedFeatures(e.point, { layers: ['places'] });
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+
+        if (!features.length) {
+            popup.remove();
+            return;
+        }
+
+        var feature = features[0];
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        popup.setLngLat(feature.geometry.coordinates)
+            .setHTML(feature.properties.description)
+            .addTo(map);
+    });
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'bottom-left');
+
+
+
+    </script>
+
+
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+
+</body>
+
+</html>

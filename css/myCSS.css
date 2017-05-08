@@ -1,0 +1,50 @@
+#section1-container {
+
+    position:relative;
+    z-index: 1;
+}
+
+<head>
+    <style type="text/css">
+       a:link {color: black;}      /* unvisited link */
+       a:visited {color: black;}   /* visited link */
+       a:hover {color: black;}     /* mouse over link */
+       a:active {color: black;}    /* selected link */
+    </style>
+</head>
+
+/*Body-font*/
+body {
+   font-family: 'PT Sans', sans-serif;
+   font-size:10px;
+}
+h4 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+}
+
+h3 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+}
+
+
+/*Navbar-font*/
+h2 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 23px;
+  font-weight: lighter;
+}
+.fill{
+    width:100%;
+    min-height:650px;
+}
+p.italic {
+    font-style: italic;
+}
+p.thick {
+    font-weight: bold;
+}
+p.it {
+    font: italic bold
+}
